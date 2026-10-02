@@ -49,7 +49,7 @@ src/
                     └── ProductoApplication.java
 ```
 
-![Estructura sin paquetes](https://github.com/gerardorosales2222/distribuidos/blob/main/01%20Microservicios/producto/src/main/resources/static/img/02sinPaquetes.jpg)
+![alt text](image.png)
 
 # 3. Creación de la Estructura de Paquetes
 Con la finalidad de respetar estrictamente la arquitectura en capas (Controller → Service → Repository → DB), es necesario crear 4 paquetes dentro de la ruta principal com.distribuido.producto:
@@ -78,17 +78,17 @@ com.distribuido.producto/
 ├── service/
 └── ProductoApplication.java
 ```
-![alt text](image-5.png)
+![alt text](image-5-1.png)
 
 
 # 4. Creación de la Entidad Producto.java
-Vamos a empezar con el modelado de **Producto**, la clase Producto.java debe estar en el paquete Model.
+Vamos a empezar con el modelado de **Auto**, la clase Producto.java debe estar en el paquete Model.
 Dentro del paquete model, se procederá a definir la clase de dominio que representará la tabla dentro de la base de datos. En este caso dado que se trata del primer microservicio que estamos haciendo utilizaremos únicamente tipos de datos elementales para facilitar la comprensión.
 
-Seleccione ***New > Java Class*** e ingrese el nombre **Producto**.
+Seleccione ***New > Java Class*** e ingrese el nombre **Auto**.
 
 
-![alt text](image-2.png)
+![alt text](image-2-1.png)
 
 ```java
 package com.distribuidos.auto.model;
@@ -149,8 +149,8 @@ Se debe crear la interfaz de repositori dentro del paquete repository, la interf
 
 Seleccione ***New > Java Interface*** e ingrese el nombre **IAutoRepository**.
 
-![alt text](image-1.png)
-![alt text](image-4.png)
+![alt text](image-1-1.png)
+![alt text](image-4-1.png)
 
 ```java
 package com.distribuidos.auto.repository;
@@ -168,7 +168,7 @@ public interface IAutoRepository extends JpaRepository<Auto, Integer>{
 Para crear la interfaz de service nos pocisionamos dentro del paquete **IAutoService**, en la interfaz haremos la firma de los metodos.
 
 Seleccione ***New > Java Interface*** e ingrese el nombre **IAutoService**.
-![alt text](image-3.png)
+![alt text](image-3-1.png)
 
 ```java
 package com.distribuidos.auto.service;
@@ -187,7 +187,7 @@ public List<Auto>listarAuto();
 Para hacer la implementacion de la interfaz service crearemos una clase dentro del paquete **Service** que se llamara **AutoService**. Aca implementaremos los metodos que creamos en la interfaz **IautoService** y haremos una inyecciones de depencia del repository para poder utilizar tambien sus metodos.
 
 Seleccione ***New > Java class*** e ingrese el nombre **AutoService**.
-![alt text](image-6.png)
+![alt text](image-6-1.png)
 ```java
 package com.distribuidos.auto.service;
 
@@ -225,7 +225,7 @@ Dentro del paquete controller, procederemos a crear la clase que se llamara **Au
 
 Seleccione ***New > Java class*** e ingrese el nombre **AutoController**.
 Aqui tendremos los:@PostMapping("/auto/CrearAuto"): Define un endpoint de tipo POST que nos permite recibir la información necesaria para registrar o crear un nuevo auto.   @GetMapping("/auto/listarAuto"): Define un endpoint de tipo GET que invoca el método listarAuto() del servicio para obtener y retornar la lista completa de autos registrados. 
-![alt text](image-7.png)
+![alt text](image-7-1.png)
 
 ```java
 package com.distribuidos.auto.controller;
@@ -270,10 +270,10 @@ spring.datasource.url=jdbc:mysql://localhost:3306/servicio_productos?serverTimez
 spring.datasource.username=root
 spring.datasource.password=
 ```
-![alt text](image-8.png)
+![alt text](image-8-1.png)
 
 
-![alt text](image-9.png)
+![alt text](image-9-1.png)
 
 
 # Consigna del Trabajo Práctico
